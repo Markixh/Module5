@@ -6,7 +6,7 @@
         {
             string[] favcolors = new string[3];
 
-            for (int i = 0; i < 3; i++) 
+            for (int i = 0; i < favcolors.Length; i++) 
                 favcolors[i] = ShowColor();
 
             Console.BackgroundColor = ConsoleColor.Black;
