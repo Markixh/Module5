@@ -6,11 +6,11 @@
         {
             Console.Write("Введите свой возраст: ");
             var Age = int.Parse(Console.ReadLine());
-            ChangeAge(Age);
+            ChangeAge(ref Age);
             Console.WriteLine($"Возраст {Age}");
             Console.ReadKey();
         }
-        static void ChangeAge(int age)
+        static void ChangeAge(ref int age)
         {
             age += 5; 
         }
