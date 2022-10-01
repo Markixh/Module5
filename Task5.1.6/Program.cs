@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            var sortedarray = SortArray(GetArrayFromConsole());   
+            ShowArray(GetArrayFromConsole());   
             Console.ReadKey();
         }
 
@@ -17,16 +17,6 @@
                 Console.WriteLine("Введите элемент массива номер {0}", i + 1);
                 result[i] = int.Parse(Console.ReadLine());
             }
-
-            //SortArray(result);
-
-            //Console.WriteLine("Отсортированный массив:");
-
-            //for (int i = 0; i < result.Length; i++)
-            //{
-            //    Console.WriteLine("Элемент массива номер {0}", i + 1);
-            //    Console.WriteLine(result[i]);
-            //}
             return result;
         }
 
@@ -43,6 +33,21 @@
                 }
             }
             return arr; 
+        }
+        static void ShowArray(int[] arr, bool isSort = false)
+        {
+            var text = "Отсортированный массив:";
+
+            if (isSort) SortArray(arr);
+            else text = "массив: ";
+
+            Console.WriteLine(text);
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine("Элемент массива номер {0}", i + 1);
+                Console.WriteLine(arr[i]);
+            }
         }
     }
 }
