@@ -6,6 +6,7 @@
         {
             Console.Write("Введите свой возраст: ");
             var Age = int.Parse(Console.ReadLine());
+            ChangeAge(Age);
             Console.WriteLine($"Возраст {Age}");
             Console.ReadKey();
         }
