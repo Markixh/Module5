@@ -14,7 +14,7 @@
             anketa.age = Convert.ToInt32(Console.ReadLine());
 
             for (int i = 0; i < favcolors.Length; i++) 
-                favcolors[i] = ShowColor(anketa.name);
+                favcolors[i] = ShowColor(anketa.name, anketa.age);
 
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
@@ -23,9 +23,9 @@
                 Console.WriteLine(color);
             Console.ReadKey();
         }
-        static string ShowColor(string name)
+        static string ShowColor(string username, int userage)
         {
-            Console.WriteLine($"{name} Напишите свой любимый цвет на английском с маленькой буквы");
+            Console.WriteLine($"{username}, {userage} \nНапишите свой любимый цвет на английском с маленькой буквы");
             var color = Console.ReadLine();
 
             switch (color)
