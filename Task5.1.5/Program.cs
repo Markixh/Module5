@@ -25,7 +25,7 @@
         }
         static string ShowColor(string name)
         {
-            Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
+            Console.WriteLine($"{name} Напишите свой любимый цвет на английском с маленькой буквы");
             var color = Console.ReadLine();
 
             switch (color)
