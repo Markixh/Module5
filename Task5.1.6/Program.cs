@@ -4,14 +4,15 @@
     {
         static void Main(string[] args)
         {
-            ShowArray(GetArrayFromConsole(10), true);   
+            var len = 5;
+            ShowArray(GetArrayFromConsole(ref len), true);   
             Console.ReadKey();
         }
 
-        static int[] GetArrayFromConsole(int num = 5)
+        static int[] GetArrayFromConsole(ref int num)
         {
             var result = new int[num];
-
+            num = 6; 
             for (int i = 0; i < result.Length; i++)
             {
                 Console.WriteLine("Введите элемент массива номер {0}", i + 1);
