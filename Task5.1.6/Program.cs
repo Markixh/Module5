@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            ShowArray(GetArrayFromConsole());   
+            ShowArray(GetArrayFromConsole(10), true);   
             Console.ReadKey();
         }
 
