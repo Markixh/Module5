@@ -23,7 +23,8 @@
             {
                 modif = modif.Remove(0, 2);
             }
-
+            Console.BackgroundColor = (ConsoleColor)(deep % 15);
+            Console.ForegroundColor = (ConsoleColor)((deep + 3) % 15);
             Console.WriteLine("..." + modif);
 
             if (deep > 1)
