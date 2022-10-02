@@ -6,7 +6,7 @@ namespace Module5
     {
         static void Main(string[] args)
         {
-            GetAnketa();
+            ShowAnket(GetAnketa());
             Console.ReadKey();
         }
 
@@ -61,7 +61,7 @@ namespace Module5
                 case "да":
                     do
                     {
-                        Console.Write("Сколько у вас любымых цветов? ");
+                        Console.Write("Сколько у вас любымых цвета(ов)? ");
                         anketa.numofcolors = Convert.ToInt32(Console.ReadLine());
                         if (!isCorrect(anketa.numofcolors))
                             Console.WriteLine("Вы ввели не правильное число любимых цветов!!!");
@@ -95,7 +95,7 @@ namespace Module5
 
             for (int i = 0; i < numofpets; i++)
             {
-                Console.Write($"как зовут вашего {i + 1} питомца? ");
+                Console.Write($"какая кличка у {i + 1} питомца? ");
                 pets[i] = Console.ReadLine();
             }
             return pets;
@@ -103,6 +103,36 @@ namespace Module5
         static bool isCorrect(int number)
         {
             return (number > 0 && number < 200);
+        }
+
+        static void ShowAnket((string name, string surname, int age, bool ispet, int numofpets, string[] pets, int numofcolors, string[] favcolors) anketa)
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("\n-=ВАША АНКЕТА=-");
+            Console.WriteLine($"Вас зовут {anketa.name} {anketa.surname} и вам {anketa.age} лет");
+            if (anketa.ispet)
+            {
+                Console.Write($"У вас есть {anketa.numofpets} питомца. Их клички - ");
+                for (int i = 0; i < anketa.numofpets; i++)
+                {
+                    Console.Write(anketa.pets[i]);
+
+                    if (i != anketa.pets.Length - 1)
+                        Console.Write(", ");
+                }                
+                Console.WriteLine();
+            }
+            if (anketa.numofcolors > 0)
+            {                
+                Console.Write($"У вас есть {anketa.numofcolors} любимых цвета(ов) - ");
+                for (int i = 0; i < anketa.numofcolors; i++)
+                {
+                    Console.Write(anketa.favcolors[i]);
+
+                    if (i != anketa.favcolors.Length - 1)
+                        Console.Write(", ");
+                }
+            }
         }
     }
 }
